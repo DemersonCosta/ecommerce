@@ -3,31 +3,18 @@
 require_once("vendor/autoload.php");
 
 use \Slim\Slim;
-use \Hcode\Page;
-use \Hcode\PageAdmin;
-
 
 $app = new Slim();
 
 $app->config('debug', true);
 
 //Rotas para o site principal
-$app->get('/', function() {
-    
-	$page = new Page();
-
-	$page->setTpl("index");
-
-});
+require_once("site.php");
 
 //Rotas para o site da administracao
-$app->get('/admin/', function() {
-    
-	$page = new PageAdmin();
+require_once("admin.php");
 
-	$page->setTpl("index");
 
-});
 
 $app->run();
 
