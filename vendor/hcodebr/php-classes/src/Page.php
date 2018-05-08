@@ -43,7 +43,7 @@
         public function setTpl($name, $data = array(), $returnHTML = false)
         {
            $this->setData($data);
-        // name talvez esteja com erro
+        
           return $this->tpl->draw($name, $returnHTML);
         }
 
